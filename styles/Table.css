@@ -8,9 +8,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /*background-image: url("images/90.jpg");*/
 }
 body{
-  background-color: #EEEBDD;
+  background-color: #D2DFE3;
 }
 
 
@@ -88,6 +89,12 @@ a, p, span, td, th{
 .tableCust{
   margin: 40px 10% 40px;
 }
+
+.tableCust tbody{
+  background-color: #E6F3F7 ;
+}
+
+.tableCust tr{border-color: black;}
 
 .tableCust table, td, th {
         padding: 50px;
