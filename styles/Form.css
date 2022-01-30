@@ -77,6 +77,14 @@ nav{
    drop-shadow(-1px -1px 0 black);
 }
 
+@media (max-width: 800px) {
+
+  .footer{
+    flex-direction: column;
+  }
+}
+
+
 a, p, span, td{
   font-size : 18px;
   font-family: poppins;
@@ -126,7 +134,7 @@ a, p, span, td{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20% 20px;
+  padding: 20px 20% 20px;
   background-color: #505d61;
   color: #edf0f1;
 }
@@ -155,4 +163,10 @@ background-color: #AAB7BB; !important
 .formsCust h3{
   font-size: 34px;
   font-family: poppins;
+}
+
+.copyright{
+  margin-top: 18px;
+  margin-bottom: 18px;
+  color: #edf0f1;
 }

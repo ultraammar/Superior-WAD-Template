@@ -74,9 +74,18 @@ nav{
 }
 .tiles{
     display:flex;
-
-
+    flex-direction: row;
 }
+
+@media (max-width: 800px) {
+  .tiles {
+    flex-direction: column;
+  }
+  .footer{
+    flex-direction: column;
+  }
+}
+
 a, p, span, h2{
   font-size : 18px;
   font-family: poppins;
@@ -147,7 +156,7 @@ i{font-size: 40px; color: white;}
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20% 20px;
+  padding: 20px 20% 20px;
   background-color: #505d61;
   color: #edf0f1;
 }
