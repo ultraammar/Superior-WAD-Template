@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="./styles/Form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title></title>
+
+    <style>
+      .row>div{position: relative;}
+    </style>
+
+    <script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
   </head>
   <body>
     <nav>
@@ -19,29 +45,42 @@
     </nav>
     <section class="formsCust">
       <h3 style="font-weight: bold;">FORM</h3>
-      <form action="" class =" p-4" style=" box-shadow: 10px 10px 2px 3px #888888; border: 2px solid black; border-radius: 25px;">
+      <form action="" class ="needs-validation p-4" style=" box-shadow: 10px 10px 2px 3px #888888; border: 2px solid black; border-radius: 25px;" novalidate>
         <div class="form-group row mb-3">
           <label for="fname" class="col-sm-4 col-form-label col-form-label-lg ">First Name:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control form-control-lg" id="fname" placeholder="Enter First Name">
+            <input type="text" class="form-control form-control-lg" id="fname" placeholder="Enter First Name" required>
+            <div class="invalid-tooltip">
+              Please enter a First Name.
+            </div>
           </div>
+
         </div>
         <div class="form-group row mb-3">
           <label for="lname" class="col-sm-4 col-form-label-lg ">Last Name:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control form-control-lg" id="lname" placeholder="Enter Surname">
+            <input type="text" class="form-control form-control-lg" id="lname" placeholder="Enter Surname" required>
+            <div class="invalid-tooltip">
+              Please enter a Last Name.
+            </div>
           </div>
         </div>
         <div class="form-group row mb-3">
           <label for="email" class="col-sm-4 col-form-label-lg">Email: </label>
           <div class="col-sm-8">
-            <input type="email" class="form-control form-control-lg" id="email" placeholder="Enter Email Address">
+            <input type="email" class="form-control form-control-lg" id="email" placeholder="Enter Email Address" required>
+            <div class="invalid-tooltip">
+              Please enter an Email address.
+            </div>
           </div>
         </div>
         <div class="form-group row mb-3">
           <label for="mnumber" class="col-sm-4  col-form-label-lg">M. Number: </label>
           <div class="col-sm-8">
-            <input type="number" class="form-control form-control-lg" id="mnumber" placeholder="Enter Phone Number">
+            <input type="number" class="form-control form-control-lg" id="mnumber" placeholder="Enter Phone Number" required>
+            <div class="invalid-tooltip">
+              Please enter a Mobile Number.
+            </div>
           </div>
         </div>
 
@@ -71,10 +110,10 @@
           </div>
         </fieldset>
         <div class="form-group row mb-3">
-          <label for="Country" class ="col-sm-4 col-form-label-lg">Select Country:</label>
+          <label for="Country" class ="col-sm-4  col-form-label-lg">Select Country:</label>
           <div class="col-sm-8">
-            <select class="form-control form-control-lg" id="Country">
-              <option value="SelectOne">Select one</option>
+            <select class="form-select " id="Country" required>
+              <option selected disabled value="">Select one</option>
               <option value="Afganistan">Afghanistan</option>
               <option value="Albania">Albania</option>
               <option value="Algeria">Algeria</option>
@@ -322,6 +361,9 @@
               <option value="Zambia">Zambia</option>
               <option value="Zimbabwe">Zimbabwe</option>
             </select>
+            <div class="invalid-tooltip">
+              Please select a Country.
+            </div>
           </div>
         </div>
         <fieldset class="form-group mb-3">
@@ -370,7 +412,7 @@
         <div class="form-group row mb-3">
           <label for="Pfp" class="col-sm-4  col-form-label-lg">Profile Image: </label>
           <div class="col-sm-8">
-            <input type="file" class="form-control form-control-lg" id="Pfp" >
+            <input type="file" class="form-control form-control-lg" id="Pfp"  >
           </div>
         </div>
         <div class="form-group row mb-3">
