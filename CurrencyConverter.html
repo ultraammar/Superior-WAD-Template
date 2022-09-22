@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/CurrencyConverter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title></title>
+
+    <style>
+      .row>div{position: relative;}
+    </style>
+
+    <script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><img src="images/SU_logo.png" alt=""></div>
+      <ul class="nav_links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="Table.html">TABLE</a></li>
+        <li><a href="Form.html">FORMS</a></li>
+        <li><a href="#">Currency Converter</a></li>
+      </ul>
+    </nav>
+    <section class="formsCust col-sm-6">
+      <h3 style="font-weight: bold;">Currency Convertion by API</h3>
+      <form action="" class ="needs-validation p-4" style=" box-shadow: 10px 10px 2px 3px #888888; border: 2px solid black; border-radius: 25px;" novalidate>
+        <div class="form-group row mb-3 amount">
+          <label for="amount" class="col-sm-4 col-form-label col-form-label-lg ">Amount:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control form-control-lg" id="fname" placeholder="Enter an Amount to convert." required>
+            <div class="invalid-tooltip">
+              Please enter an Amount.
+            </div>
+          </div>
+        </div>
+        <div class="currency-list">
+          <div class="form-group row mb-3 from">
+            <label for="from" class ="col-sm-4  col-form-label-lg">From Currency:</label>
+            <div class="col-sm-8">
+              <select class="form-select " id="from" required>
+
+              </select>
+              <div class="invalid-tooltip">
+                Please select a currency.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row mb-3 to">
+            <label for="from" class ="col-sm-4  col-form-label-lg">To Currency:</label>
+            <div class="col-sm-8">
+              <select class="form-select " id="to" required>
+
+              </select>
+              <div class="invalid-tooltip">
+                Please select a currency.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row mb-3">
+          <div class="col-sm-10 text-right">
+            <button style="border-bottom: solid 3px grey; box-shadow: 1px 1px 20px 2px #5A676B;"type="submit" class="btn btn-dark pull-right">Convert</button>
+          </div>
+        </div>
+
+        <div class="form-group row mb-3">
+          <label for="rate-exchanged" class="rate-exchanged col-form-label-lg ">1 USD = 118.16 NPR</label>
+        </div>
+      </form>
+    </section>
+    <section class="footer">
+      <p class="copyright" >© 2022 Superior University</p>
+      <a class="btnCust" href="mailto:bitm-f20-16@superior.edu.pk">CONTACT US</a>
+    </section>
+
+
+
+    <script  src="js/country-list.js"></script>
+    <script  src="js/script.js"></script>
+  </body>
+</html>
